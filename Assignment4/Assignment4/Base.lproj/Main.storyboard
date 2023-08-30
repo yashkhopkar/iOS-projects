@@ -128,7 +128,8 @@
                                             <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="Tyr-Cr-XxD" kind="show" identifier="toFavouritesView" id="ovE-nf-rjb"/>
+                                            <action selector="addToFavs:" destination="7zC-Nx-J6E" eventType="touchUpInside" id="Evt-z2-Oy2"/>
+                                            <segue destination="Tyr-Cr-XxD" kind="show" identifier="toFavouritesView" id="zPD-VD-4qF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -189,6 +190,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qk5-NT-J29" kind="show" identifier="toFavDetails" id="nZt-2r-gC3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -201,6 +205,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fk8-Zp-V5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5550" y="-61"/>
+        </scene>
+        <!--Favourites Details View Controller-->
+        <scene sceneID="MZw-H5-EXv">
+            <objects>
+                <viewController id="Qk5-NT-J29" customClass="FavouritesDetailsViewController" customModule="Assignment4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EwY-JS-ZvJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-67-d3u">
+                                <rect key="frame" x="16" y="103" width="361" height="348"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbG-jf-sBt">
+                                        <rect key="frame" x="8" y="8" width="345" height="332"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Pkc-MB-ok9"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="2i0-le-dCP"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2IY-IZ-lux">
+                                <rect key="frame" x="16" y="619" width="361" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ztr-ks-lWh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IQL-nq-rhV"/>
+                    <connections>
+                        <outlet property="favDetailsScrollView" destination="I7x-67-d3u" id="BLv-0l-B1U"/>
+                        <outlet property="image" destination="sbG-jf-sBt" id="ccV-dT-2o1"/>
+                        <outlet property="name" destination="2IY-IZ-lux" id="t0j-HF-6fO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1m-1B-Mb1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6345.801526717557" y="-61.267605633802823"/>
         </scene>
         <!--Item-->
         <scene sceneID="sTR-hU-qo6">

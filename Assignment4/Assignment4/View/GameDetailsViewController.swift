@@ -2,10 +2,11 @@
 //  GameDetailsViewController.swift
 //  Assignment4
 //
-//  Created by Yash Khopkar on 2023-04-20.
+//  Created by Yash Khopkar on 2023-08-12.
 //
 
 import UIKit
+import CoreData
 
 class GameDetailsViewController: UIViewController {
     
@@ -20,6 +21,8 @@ class GameDetailsViewController: UIViewController {
     @IBOutlet weak var ersb: UILabel!
     
     var game: Game!
+    
+    var dbManager = CoreDataManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +47,12 @@ class GameDetailsViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func addToFavs(_ sender: UIButton) {
+        dbManager.createFavGame(_name: game.name!, _url: game.background_image!)
+        //performSegue(withIdentifier: "toFavouritesView", sender: self)
+    }
+    
 
     // MARK: - Navigation
 
@@ -53,7 +62,7 @@ class GameDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "toFavouritesView" {
             let favVC = segue.destination as! FavouritesTableViewController
-            favVC.gameName = game.name
+            //favVC.gameName = game.name
         }
     }
     
